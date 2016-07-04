@@ -16,7 +16,7 @@ def find_location(model,image,categories,model_type,downsample,target_size,strid
 	#localization_map = np.zeros(len(x_vec),len(y_vec))
         localization_map = np.zeros((im_size[0],im_size[1]))
 	for x in x_vec:
-		print('X coordinate: ' + str(x))
+#		print('X coordinate: ' + str(x))
 		for y in y_vec:
 			pred_image = np.zeros((im_size[0],im_size[1]))
 			bb = [x,y,target_size[0],target_size[1]]

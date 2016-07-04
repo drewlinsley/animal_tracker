@@ -8,6 +8,7 @@ from monkey_localization.mirc_fun import *
 from monkey_localization import run_vgg19
 import re
 import glob
+from tqdm import tqdm
 
 #Settings
 main_dir = '/home/drew/Documents/neural_decoding/monkey_skeletons/template_matching'
@@ -35,7 +36,7 @@ ims = sorted(glob.glob(image_dir + '/*.jpeg'), key = os.path.getmtime)
 
 #Loop through images
 bb_array = np.zeros((len(ims),4))
-for i in range(0,len(ims)):
+for i in tqdm(range(0,len(ims))):
 	ti = misc.imread(ims[i])
 	ri, hm, bb = find_location(model,ti,target_categories,model_type,downsample,target_size,stride,threshold)
 	bb_array[i,:] = bb
