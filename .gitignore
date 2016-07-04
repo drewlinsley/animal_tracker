@@ -1,0 +1,3 @@
+monkey_localization/models/*.h5
+monkey_localization/models/*.prototxt
+monkey_localization/models/*.caffemodel
